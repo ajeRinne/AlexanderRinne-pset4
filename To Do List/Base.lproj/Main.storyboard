@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iq4-Yt-AVm">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFX-9C-5n9">
-                                <rect key="frame" x="16" y="72" width="343" height="30"/>
+                                <rect key="frame" x="20" y="72" width="627" height="30"/>
                                 <state key="normal" title="Add To-Do"/>
                                 <connections>
                                     <action selector="addToDo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8t5-fd-xXO"/>
@@ -31,31 +31,42 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Mx-sv-alF">
-                                <rect key="frame" x="16" y="110" width="343" height="537"/>
+                                <rect key="frame" x="20" y="110" width="627" height="245"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TableViewCellToDo" id="0mn-C2-lmu" customClass="TableViewCellToDo" customModule="To_Do_List" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="50"/>
+                                        <rect key="frame" x="0.0" y="28" width="627" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0mn-C2-lmu" id="tUE-nB-Vhu" customClass="TableViewCellToDo" customModule="To_Do_List" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="594" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To Do" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8z-gb-He8">
-                                                    <rect key="frame" x="20" y="0.0" width="270" height="49.5"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <connections>
-                                                        <segue destination="AHD-Rg-Uml" kind="show" id="pcs-0K-oWe"/>
-                                                    </connections>
-                                                </textField>
+                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" horizontalCompressionResistancePriority="250" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="1fx-jf-Cxu">
+                                                    <rect key="frame" x="20" y="5" width="554" height="39.5"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To Do" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8z-gb-He8">
+                                                            <rect key="frame" x="0.0" y="0.0" width="504" height="39.5"/>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                            <connections>
+                                                                <segue destination="AHD-Rg-Uml" kind="show" id="pcs-0K-oWe"/>
+                                                            </connections>
+                                                        </textField>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIP-aM-Jow">
+                                                            <rect key="frame" x="505" y="0.0" width="51" height="39.5"/>
+                                                            <connections>
+                                                                <action selector="toDoSwitchAction:" destination="0mn-C2-lmu" eventType="valueChanged" id="Hyt-tv-bgr"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="y8z-gb-He8" secondAttribute="bottom" id="FFf-kr-nQa"/>
-                                                <constraint firstItem="y8z-gb-He8" firstAttribute="leading" secondItem="tUE-nB-Vhu" secondAttribute="leading" constant="20" symbolic="YES" id="U6c-TT-b6B"/>
-                                                <constraint firstAttribute="trailing" secondItem="y8z-gb-He8" secondAttribute="trailing" constant="20" symbolic="YES" id="YHr-H8-fTc"/>
-                                                <constraint firstItem="y8z-gb-He8" firstAttribute="top" secondItem="tUE-nB-Vhu" secondAttribute="top" id="jKh-bi-yVT"/>
+                                                <constraint firstItem="1fx-jf-Cxu" firstAttribute="leading" secondItem="tUE-nB-Vhu" secondAttribute="leading" constant="20" id="3TD-FQ-rDc"/>
+                                                <constraint firstAttribute="bottom" secondItem="1fx-jf-Cxu" secondAttribute="bottom" constant="5" id="JTh-t9-1H9"/>
+                                                <constraint firstItem="1fx-jf-Cxu" firstAttribute="top" secondItem="tUE-nB-Vhu" secondAttribute="top" constant="5" id="SIF-oz-mEj"/>
+                                                <constraint firstAttribute="trailing" secondItem="1fx-jf-Cxu" secondAttribute="trailing" constant="20" id="gkl-X3-koK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration">
@@ -63,6 +74,7 @@
                                         </accessibility>
                                         <gestureRecognizers/>
                                         <connections>
+                                            <outlet property="toDoSwitch" destination="eIP-aM-Jow" id="ZYm-dH-6Nb"/>
                                             <outlet property="toDoTextField" destination="y8z-gb-He8" id="Y4K-mn-gH9"/>
                                             <outletCollection property="gestureRecognizers" destination="Psm-Uy-yJV" appends="YES" id="edU-Dz-jzl"/>
                                         </connections>
@@ -104,14 +116,14 @@
                         <viewControllerLayoutGuide type="bottom" id="bIk-1V-Olb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1D0-hJ-UNA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ry2-HX-cRF">
-                                <rect key="frame" x="16" y="80" width="343" height="541"/>
+                                <rect key="frame" x="20" y="80" width="627" height="249"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="To Do" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JVK-gf-QFN">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="627" height="30"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="NO"/>
                                         </accessibility>
@@ -123,7 +135,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Date Time" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iMP-HV-Q88">
-                                        <rect key="frame" x="0.0" y="40" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="40" width="627" height="30"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="NO"/>
                                         </accessibility>
@@ -135,7 +147,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Location" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TYV-HI-WR7">
-                                        <rect key="frame" x="0.0" y="80" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="80" width="627" height="30"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="NO"/>
                                         </accessibility>
@@ -147,7 +159,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tKD-KK-NaC">
-                                        <rect key="frame" x="0.0" y="120" width="343" height="421"/>
+                                        <rect key="frame" x="0.0" y="120" width="627" height="129"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="NO"/>
@@ -158,7 +170,7 @@
                                 </subviews>
                             </stackView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJl-cy-axs">
-                                <rect key="frame" x="253" y="629" width="102" height="30"/>
+                                <rect key="frame" x="545" y="337" width="102" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dbZ-k9-JPg"/>
                                 </constraints>
@@ -197,11 +209,11 @@
                         <viewControllerLayoutGuide type="bottom" id="LJG-33-Qns"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Gs-oh-Rqe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DSJ-eL-weo">
-                                <rect key="frame" x="16" y="72" width="343" height="561"/>
+                                <rect key="frame" x="20" y="72" width="627" height="269"/>
                                 <subviews>
                                     <textField clipsSubviews="YES" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What do you have to do?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XV1-aI-dvC">
                                         <rect key="frame" x="0.0" y="0.0" width="281" height="20"/>
@@ -231,7 +243,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNL-ib-yel">
-                                        <rect key="frame" x="0.0" y="90" width="240" height="471"/>
+                                        <rect key="frame" x="0.0" y="90" width="240" height="179"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -239,7 +251,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gje-vB-jKg">
-                                <rect key="frame" x="271" y="641" width="84" height="6"/>
+                                <rect key="frame" x="559" y="349" width="84" height="6"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Add To-Do"/>
                                 <connections>

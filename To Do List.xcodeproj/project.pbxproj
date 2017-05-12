@@ -16,6 +16,7 @@
 		FA3B85491EBF2E39001B8734 /* ViewControllerAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B85481EBF2E39001B8734 /* ViewControllerAdd.swift */; };
 		FA3B854B1EBF32C1001B8734 /* TableViewCellToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B854A1EBF32C1001B8734 /* TableViewCellToDo.swift */; };
 		FA3B85511EBF4EDA001B8734 /* ViewControllerSee.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B85501EBF4EDA001B8734 /* ViewControllerSee.swift */; };
+		FA3B85531EC484AD001B8734 /* struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B85521EC484AC001B8734 /* struct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		FA3B85481EBF2E39001B8734 /* ViewControllerAdd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerAdd.swift; path = "To Do List/ViewControllerAdd.swift"; sourceTree = "<group>"; };
 		FA3B854A1EBF32C1001B8734 /* TableViewCellToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCellToDo.swift; path = "To Do List/TableViewCellToDo.swift"; sourceTree = "<group>"; };
 		FA3B85501EBF4EDA001B8734 /* ViewControllerSee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerSee.swift; path = "To Do List/ViewControllerSee.swift"; sourceTree = "<group>"; };
+		FA3B85521EC484AC001B8734 /* struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = struct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		FA3B850F1EBF1C28001B8734 = {
 			isa = PBXGroup;
 			children = (
+				FA3B85521EC484AC001B8734 /* struct.swift */,
 				FA3B85501EBF4EDA001B8734 /* ViewControllerSee.swift */,
 				FA3B85481EBF2E39001B8734 /* ViewControllerAdd.swift */,
 				FA3B854A1EBF32C1001B8734 /* TableViewCellToDo.swift */,
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3B85531EC484AD001B8734 /* struct.swift in Sources */,
 				FA3B851E1EBF1C28001B8734 /* ViewController.swift in Sources */,
 				FA3B85491EBF2E39001B8734 /* ViewControllerAdd.swift in Sources */,
 				FA3B851C1EBF1C28001B8734 /* AppDelegate.swift in Sources */,
